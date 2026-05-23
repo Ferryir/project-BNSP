@@ -1,15 +1,22 @@
 {{--
     hasil.blade.php
     Halaman Hasil/Status Pendaftaran Beasiswa (Tab 3 - Hasil)
-    
-    Menampilkan tabel data pendaftaran beasiswa dengan kolom:
-    Nama Lengkap, Email, No. HP, Semester, IPK, Jenis Beasiswa, Berkas, Status Ajuan
-    
-    Status default: "Belum Di Verifikasi"
-    Data ditampilkan sesuai dengan yang diinput pada halaman pendaftaran.
-    
+
+    Halaman ini menampilkan tabel data pendaftaran beasiswa milik user yang sedang login.
+    Data difilter berdasarkan email user yang terautentikasi sehingga
+    setiap mahasiswa hanya bisa melihat data pendaftarannya sendiri.
+
+    Kolom yang ditampilkan:
+    - Nama Lengkap, Email, No. HP, Semester, IPK
+    - Jenis Beasiswa (Akademik/Non-Akademik) dengan badge berwarna
+    - Berkas (link untuk melihat/download file yang diunggah)
+    - Status Ajuan dengan badge berwarna:
+      * Kuning  : Belum Diverifikasi (menunggu keputusan admin)
+      * Hijau   : Diterima (disetujui oleh admin)
+      * Merah   : Ditolak (tidak disetujui oleh admin)
+
     @author  ProjectBNSP
-    @version 1.0
+    @version 2.0
 --}}
 
 @extends('components.app')
